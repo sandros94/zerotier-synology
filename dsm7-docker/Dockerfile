@@ -1,6 +1,7 @@
 # vim: ft=dockerfile
 
 FROM alpine:latest as builder
+ARG ZTO_COMMIT
 
 WORKDIR /src
 RUN apk add --no-cache rust cargo \
@@ -11,6 +12,8 @@ RUN apk add --no-cache rust cargo \
   && make -f make-linux.mk
 
 FROM alpine:latest
+ARG ZTO_VER
+
 LABEL version=${ZTO_VER}
 LABEL description="ZeroTier One docker image for Synology NAS"
 
