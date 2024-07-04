@@ -28,3 +28,9 @@ Pull the latest image and then use the command above to start it:
 ```bash
 docker pull sandros94/zerotier-synology:latest
 ```
+
+## Build
+
+```bash
+docker build --no-cache --load --rm -t sandros94/zerotier-synology:34cc261 . --build-arg ZTO_COMMIT=34cc26176c8d1a2c49935928d7297a9859ab2023 --build-arg ZTO_VER=1.14.0
+```
