@@ -17,7 +17,10 @@ LABEL description="ZeroTier One docker image for Synology NAS"
 RUN apk add --update --no-cache bash jq libc6-compat libstdc++
 
 EXPOSE 9993/udp
-ENV MAX_WAIT_SECS=90 \
+ENV ZT_ENABLE_MULTICORE=1 \
+  ZT_CONCURRENCY=2 \
+  ZT_CORE_PINNING=0 \
+  MAX_WAIT_SECS=90 \
   SLEEP_TIME=15
 
 COPY --from=builder /src/zerotier-one /usr/sbin/
