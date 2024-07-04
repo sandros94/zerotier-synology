@@ -8,8 +8,6 @@ echo "Starting Zerotier-One"
 zerotier-one -d
 
 echo "Wait for ZT service to come online before attempting queries..."
-MAX_WAIT_SECS="${MAX_WAIT_SECS:-90}"
-SLEEP_TIME="${SLEEP_TIME:-15}"
 if [[ "$SLEEP_TIME" -le 0 ]]
 then
   SLEEP_TIME=1
