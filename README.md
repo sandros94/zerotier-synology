@@ -11,7 +11,7 @@ sudo docker run -d --name zt --restart=always --device=/dev/net/tun --net=host -
 
 To update ZeroTier you have to remove the old container first and then pull the latest image:
 ```bash
-docker ps
+sudo docker ps
 ```
 Example output:
 ```
@@ -21,12 +21,12 @@ CONTAINER ID   IMAGE                               COMMAND          CREATED     
 
 Stop the old container and remove it:
 ```bash
-docker stop 52c7cb58a1dd && docker container rm 52c7cb58a1dd
+sudo docker stop 52c7cb58a1dd && docker container rm 52c7cb58a1dd
 ```
 
 Pull the latest image and then use the command above to start it:
 ```bash
-docker pull sandros94/zerotier-synology:latest
+sudo docker pull sandros94/zerotier-synology:latest
 ```
 
 ## Build
