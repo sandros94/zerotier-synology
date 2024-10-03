@@ -1,6 +1,6 @@
 # vim: ft=dockerfile
 
-FROM alpine:latest as builder
+FROM alpine:latest AS builder
 
 WORKDIR /src
 RUN apk add --no-cache rust cargo \
